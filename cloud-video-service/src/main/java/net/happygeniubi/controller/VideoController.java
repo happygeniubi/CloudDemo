@@ -12,7 +12,7 @@ public class VideoController {
     @Autowired
     private VideoService videoService;
 
-    @RequestMapping("find_by_id")
+    @RequestMapping("/find_by_id")
     public Object findById(int videoId) {
         return videoService.findById(videoId);
     }
