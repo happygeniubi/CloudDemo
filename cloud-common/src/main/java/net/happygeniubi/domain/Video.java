@@ -13,4 +13,7 @@ public class Video {
     private Integer  price;
     private Date createTime;
     private Double point;
+
+    // 测试使用,表示调用的是哪一个服务(多节点情况下)
+    private String serveInfo;
 }

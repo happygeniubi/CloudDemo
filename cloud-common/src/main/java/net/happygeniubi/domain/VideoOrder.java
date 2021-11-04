@@ -15,4 +15,7 @@ public class VideoOrder {
     private String videoTitle;
     private String videoImg;
     private Integer userId;
+
+    // 测试使用,表示调用的是哪一个服务(多节点情况下)
+    private String serverInfo;
 }

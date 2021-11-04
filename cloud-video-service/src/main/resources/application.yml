@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 9002
 
 spring:
   application:
@@ -9,6 +9,10 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/cloud_video?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
     username: root
     password: hzl26918826
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
 # 控制台输出sql、下划线转驼峰
 mybatis:
