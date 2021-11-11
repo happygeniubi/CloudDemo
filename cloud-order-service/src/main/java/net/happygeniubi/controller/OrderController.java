@@ -81,4 +81,21 @@ public class OrderController {
         map.put("title2", "happygeniubi");
         return map;
     }
+
+    int temp = 0;
+
+    /**
+     * 测试Sentinel熔断
+     */
+    @RequestMapping("/getList")
+    public Object getList() {
+        temp++;
+        if(temp%3 == 0) {
+            throw new RuntimeException();
+        }
+        Map<String, String> map = new HashMap<>();
+        map.put("title1", "alibaba");
+        map.put("title2", "happygeniubi");
+        return map;
+    }
 }
