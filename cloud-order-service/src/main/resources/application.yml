@@ -28,3 +28,8 @@ mybatis:
 cloud-video-service:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+# 开启Feign对Sentinel的支持
+feign:
+  sentinel:
+    enabled: true

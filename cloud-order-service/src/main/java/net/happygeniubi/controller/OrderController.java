@@ -58,7 +58,7 @@ public class OrderController {
      * @return
      */
     @RequestMapping("/save")
-    public Object Save(@RequestBody Video video) {
+    public Object save(@RequestBody Video video) {
         int row = videoService.save(video);
         HashMap<String, Object> map = new HashMap<>();
         map.put("row", row);
