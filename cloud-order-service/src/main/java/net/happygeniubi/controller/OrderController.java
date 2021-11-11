@@ -14,6 +14,8 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("api/v1/video_order")
@@ -60,6 +62,23 @@ public class OrderController {
         int row = videoService.save(video);
         HashMap<String, Object> map = new HashMap<>();
         map.put("row", row);
+        return map;
+    }
+
+    /**
+     * 测试Sentinel流控(通过线程数)
+     * @return
+     */
+    @RequestMapping("/list")
+    public Object list() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Map<String, String> map = new HashMap<>();
+        map.put("title1", "alibaba");
+        map.put("title2", "happygeniubi");
         return map;
     }
 }
