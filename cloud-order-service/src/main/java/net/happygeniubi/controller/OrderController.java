@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -88,14 +89,15 @@ public class OrderController {
      * 测试Sentinel熔断
      */
     @RequestMapping("/getList")
-    public Object getList() {
-        temp++;
-        if(temp%3 == 0) {
-            throw new RuntimeException();
-        }
+    public Object getList(HttpServletRequest request) {
+//        temp++;
+//        if(temp%3 == 0) {
+//            throw new RuntimeException();
+//        }
         Map<String, String> map = new HashMap<>();
         map.put("title1", "alibaba");
         map.put("title2", "happygeniubi");
+        map.put("port", request.getServerPort()+"");
         return map;
     }
 }
